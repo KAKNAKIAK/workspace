@@ -10,9 +10,9 @@
 | HERO 03 | `01-hero-03-saipan-church.jpg` |
 | HERO 04 | `01-hero-04-managaha-aerial-credit-required.jpg` |
 | CHECK 01 | `02-check-01-air-hotel-promo.jpg` |
-| CHECK 02 | `02-check-02-saipan-central-market.jpg` |
-| CHECK 03 | `02-check-03-late-checkout.jpg` |
-| CHECK 04 | `02-check-04-bird-island-tour-credit-required.jpg` |
+| CHECK 02 | `02-check-03-late-checkout.jpg` |
+| CHECK 03 | `02-check-03-ocean-view-upgrade.jpg` |
+| CHECK 04 | `02-check-04-saipan-central-hotel.jpg` |
 | HOTEL | `03-hotel-crowne-plaza-exterior.jpg` |
 | FACILITY 01 | `04-facility-01-pool-kids.jpg` |
 | FACILITY 02 | `04-facility-02-micro-beach.jpg` |

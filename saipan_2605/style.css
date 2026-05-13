@@ -34,6 +34,7 @@ body {
     linear-gradient(90deg, rgba(5, 120, 212, 0.08) 0 8%, transparent 8% 92%, rgba(0, 168, 186, 0.08) 92% 100%),
     linear-gradient(180deg, #e4f9ff 0%, #f8feff 54%, #fff4d9 100%);
   font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -256,6 +257,8 @@ img {
   line-height: 1.2;
   letter-spacing: 0;
   word-break: break-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
   pointer-events: none;
 }
 
@@ -886,11 +889,11 @@ img {
   }
 
   .hero-title span {
-    font-size: 86px;
+    font-size: clamp(48px, 10vw, 76px);
   }
 
   .hero-title strong {
-    font-size: 43px;
+    font-size: clamp(28px, 6vw, 40px);
   }
 
   .hero-sub {
@@ -907,7 +910,7 @@ img {
   }
 
   .price {
-    font-size: 45px;
+    font-size: clamp(30px, 6.5vw, 45px);
   }
 
   .family-price {
@@ -917,7 +920,10 @@ img {
 
   .promo-period {
     top: 12px;
-    right: 12px;
+    right: auto;
+    left: 50%;
+    width: min(300px, calc(100% - 24px));
+    transform: translateX(-50%);
     min-width: 0;
     padding: 10px 12px 11px;
     font-size: 12px;
@@ -953,12 +959,12 @@ img {
 
   .check-header h2,
   .best-header h2 {
-    font-size: 36px;
+    font-size: clamp(26px, 5vw, 36px);
   }
 
   .check-header p,
   .facility-lead {
-    font-size: 18px;
+    font-size: clamp(15px, 3.2vw, 18px);
   }
 
   .check-grid,
@@ -1054,12 +1060,25 @@ img {
     min-height: 750px;
   }
 
+  .hero-copy {
+    padding: 88px 16px 0;
+    transform: rotate(-1deg);
+  }
+
+  .eyebrow {
+    font-size: 18px;
+  }
+
   .hero-title span {
-    font-size: 76px;
+    font-size: clamp(58px, 16vw, 64px);
   }
 
   .hero-title strong {
-    font-size: 38px;
+    font-size: clamp(31px, 9.2vw, 36px);
+  }
+
+  .hero-sub {
+    font-size: 20px;
   }
 
   .hero-subcopy {
@@ -1067,16 +1086,46 @@ img {
   }
 
   .price {
-    font-size: 39px;
+    font-size: 34px;
   }
 
   .family-price {
-    font-size: 16px;
+    padding-right: 14px;
+    padding-left: 14px;
+    font-size: 15px;
   }
 
   .promo-period {
-    right: 10px;
+    right: auto;
+    left: 50%;
+    width: min(292px, calc(100% - 18px));
+    max-width: calc(100% - 16px);
+    padding-right: 10px;
+    padding-left: 10px;
+    transform: translateX(-50%);
     font-size: 12px;
+  }
+
+  .promo-period span {
+    gap: 8px;
+  }
+
+  .check-header h2,
+  .best-header h2 {
+    max-width: 330px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 30px;
+  }
+
+  .check-header p {
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .asset-label {
+    font-size: 10px;
   }
 
   .check-image,
