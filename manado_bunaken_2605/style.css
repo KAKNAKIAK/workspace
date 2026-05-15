@@ -1,0 +1,239 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.ns-point-special {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    color: #333;
+    font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .ns-point-special * {
+    box-sizing: border-box;
+  }
+
+  .ns-point-top {
+    padding: 48px 34px 30px;
+  }
+
+  .ns-point-mark {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 16px;
+  }
+
+  .ns-point-mark svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ns-point-title {
+    margin: 0;
+    color: #303030;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+
+  .ns-point-copy {
+    max-width: 620px;
+    margin: 24px auto 0;
+    color: #555;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+  }
+
+  .ns-point-map {
+    max-width: 690px;
+    margin: 30px auto 0;
+  }
+
+  .ns-point-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .ns-point-part {
+    padding-top: 70px;
+  }
+
+  .ns-point-part:first-of-type {
+    padding-top: 0;
+  }
+
+  .ns-point-part-head {
+    padding: 0 34px 28px;
+  }
+
+  .ns-point-part-title {
+    margin: 0;
+    color: #303030;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .ns-point-part-copy {
+    max-width: 610px;
+    margin: 18px auto 0;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.75;
+    letter-spacing: 0;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+  }
+
+  .ns-point-copy span,
+  .ns-point-part-copy span {
+    display: block;
+  }
+
+  .ns-point-copy span + span,
+  .ns-point-part-copy span + span {
+    margin-top: 6px;
+  }
+
+  .ns-point-hero,
+  .ns-point-item,
+  .ns-point-wide {
+    margin: 0;
+  }
+
+  .ns-point-hero img,
+  .ns-point-item img,
+  .ns-point-wide img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .ns-point-section {
+    padding: 72px 0 0;
+  }
+
+  .ns-point-section-icon {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 14px;
+  }
+
+  .ns-point-section-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ns-point-heading {
+    margin: 0 0 32px;
+    color: #333;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+
+  .ns-point-heading .ns-point-accent {
+    color: #18b9cc;
+  }
+
+  .ns-point-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 4px;
+    row-gap: 34px;
+  }
+
+  .ns-point-item {
+    min-width: 0;
+  }
+
+  .ns-point-item img {
+    aspect-ratio: 1.35;
+    object-fit: cover;
+  }
+
+  .ns-point-wide img {
+    aspect-ratio: 1.8;
+    object-fit: cover;
+  }
+
+  .ns-point-item figcaption,
+  .ns-point-wide figcaption {
+    margin-top: 10px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  .ns-point-wide {
+    margin-top: 36px;
+  }
+
+  @media (max-width: 560px) {
+    .ns-point-top {
+      padding: 40px 24px 28px;
+    }
+
+    .ns-point-title {
+      font-size: 38px;
+    }
+
+    .ns-point-copy,
+    .ns-point-part-copy {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .ns-point-map {
+      margin-top: 24px;
+    }
+
+    .ns-point-part {
+      padding-top: 56px;
+    }
+
+    .ns-point-part-head {
+      padding: 0 24px 24px;
+    }
+
+    .ns-point-part-title {
+      font-size: 30px;
+    }
+
+    .ns-point-section {
+      padding-top: 56px;
+    }
+
+    .ns-point-heading {
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+
+    .ns-point-grid {
+      row-gap: 26px;
+    }
+
+    .ns-point-item figcaption,
+    .ns-point-wide figcaption {
+      font-size: 16px;
+    }
+  }
