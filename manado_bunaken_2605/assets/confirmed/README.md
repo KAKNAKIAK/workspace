@@ -6,7 +6,9 @@
 |---|---|---|
 | 2219920376 | `manado-hero-bay-bridge-new.jpg` | 마나도 히어로 |
 | 1084295318 | `manado-soekarno-bridge-new.jpg` | 수카르노 브리지 |
+| 1279812621 | `GettyImages-1279812621.jpg` | 마나도 항구 |
 | 1475551409 | `manado-christ-blessing-new.jpg` | 크라이스트 블레싱 |
+| 1095615464 | `GettyImages-1095615464.jpg` | 반힌끼옹 사원 |
 | 2231213929 | `manado-city-welcome-new.jpg` | 마나도 시내 |
 | 2183201197 | `manado-bay-aerial-new.jpg` | 마나도 베이 |
 | 2219920398 | `bunaken-island-beach-new.jpg` | 부나켄 히어로 |
@@ -24,6 +26,5 @@
 | `icon-camera.svg` | 섹션 아이콘 |
 | `icon-beach.svg` | 섹션 아이콘 |
 
-공식 원본이 확인되지 않은 게티 캡처 PNG는 전달본에서 제외했습니다.
-
 `1475551409`는 에디토리얼 전용 이미지입니다. 공개 사용 전 표기와 사용 범위를 확인해야 합니다.
+`1095615464`는 에디토리얼 전용 이미지입니다. 공개 사용 전 표기와 사용 범위를 확인해야 합니다.
