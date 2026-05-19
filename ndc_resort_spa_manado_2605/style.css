@@ -1,0 +1,803 @@
+:root {
+  --ns-text: #555;
+  --ns-muted: #999;
+  --ns-light: #bbb;
+  --ns-blue: #27a9e1;
+  --ns-blue-soft: #70b9e8;
+  --ns-bg: #fff;
+}
+
+.ns-special {
+  max-width: 750px;
+  margin: 0 auto;
+  background: var(--ns-bg);
+  color: var(--ns-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  letter-spacing: 0;
+}
+
+.ns-special *,
+.ns-special *::before,
+.ns-special *::after {
+  box-sizing: border-box;
+}
+
+.ns-top {
+  text-align: center;
+  padding: 72px 24px 30px;
+}
+
+.ns-top-icon,
+.ns-section-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 16px;
+}
+
+.ns-top-icon img,
+.ns-section-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ns-main-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.045em;
+}
+
+.ns-en-title {
+  margin: 7px 0 18px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ns-light);
+  letter-spacing: 0.02em;
+}
+
+.ns-main-subtitle {
+  margin: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ns-blue-soft);
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ns-full-image {
+  margin: 0;
+}
+
+.ns-full-image img,
+.ns-image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ns-image-grid {
+  margin: 4px 0 0;
+}
+
+.ns-image-grid--two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.ns-image-grid figure {
+  margin: 0;
+}
+
+.ns-waterpark-image {
+  margin-top: 10px;
+}
+
+.ns-waterpark-image img {
+  border: 6px solid #fff;
+  box-shadow: 0 18px 34px rgba(39, 169, 225, 0.24);
+}
+
+.ns-waterpark-image + .ns-image-grid,
+.ns-waterpark-image + .ns-full-image {
+  margin-top: 10px;
+}
+
+.ns-image-caption {
+  margin: 8px 18px 0;
+  color: #6a767d;
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ns-image-grid .ns-image-caption {
+  margin: 7px 8px 0;
+  font-size: 12px;
+}
+
+.ns-special--designer .ns-labeled-media {
+  position: relative;
+}
+
+.ns-special--designer .ns-asset-label {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  z-index: 2;
+  max-width: calc(100% - 16px);
+  padding: 5px 8px 6px;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.25;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  letter-spacing: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+.ns-copy-block {
+  padding: 24px 30px 58px;
+  text-align: center;
+}
+
+.ns-copy-block p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.72;
+  color: #777;
+  letter-spacing: -0.035em;
+}
+
+.ns-copy-block strong,
+.ns-highlight {
+  color: var(--ns-blue);
+  font-weight: 700;
+}
+
+.ns-legacy-section {
+  margin: 0;
+  padding: 0;
+}
+
+.ns-section-heading {
+  text-align: center;
+  padding: 0 24px 22px;
+}
+
+.ns-section-heading h3 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: -0.045em;
+}
+
+.ns-disclaimer {
+  margin: 0;
+  padding: 0 28px 56px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #999;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.ns-special--santiago,
+.ns-special--donghoi {
+  --ns-guide-sky: #eef9ff;
+  --ns-guide-blue: #27a9e1;
+  --ns-guide-ink: #38434a;
+  --ns-guide-paper: #fbf5e9;
+  --ns-guide-line: #e7eef3;
+  color: var(--ns-guide-ink);
+}
+
+.ns-special--santiago .ns-guide-hero,
+.ns-special--donghoi .ns-guide-hero {
+  text-align: center;
+  padding: 72px 24px 36px;
+  background: var(--ns-guide-sky);
+}
+
+.ns-guide-hero-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 18px;
+}
+
+.ns-guide-hero-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.ns-guide-title {
+  margin: 0;
+  color: #26343c;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.ns-guide-en-title {
+  margin: 8px 0 16px;
+  color: #7da5bb;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.ns-guide-subtitle {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #277ba3;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.58;
+  letter-spacing: 0;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ns-guide-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  padding: 0 24px 44px;
+}
+
+.ns-guide-fact {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 7px 0 5px;
+  border-bottom: 2px solid #ffe16a;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.ns-guide-fact span {
+  color: #7a8a92;
+}
+
+.ns-guide-fact strong {
+  color: #25323a;
+  font-weight: 700;
+}
+
+.ns-guide-selling-points {
+  padding-bottom: 32px;
+}
+
+.ns-guide-selling-title {
+  margin: 0;
+  padding: 0 24px 16px;
+  color: #2f3d45;
+  font-size: 22px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.ns-guide-point-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 24px;
+}
+
+.ns-guide-point {
+  padding: 15px 12px;
+  border-top: 2px solid #ffe16a;
+  background: #f7fbfd;
+}
+
+.ns-guide-point h4 {
+  margin: 0 0 8px;
+  color: #25323a;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.ns-guide-point p {
+  margin: 0;
+  color: #5f6b72;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.ns-guide-section {
+  margin: 0;
+  padding: 0 0 42px;
+}
+
+.ns-special--santiago .ns-section-heading,
+.ns-special--donghoi .ns-section-heading {
+  padding-top: 18px;
+}
+
+.ns-special--santiago .ns-section-heading h3,
+.ns-special--donghoi .ns-section-heading h3 {
+  color: #35444d;
+  font-size: 27px;
+  letter-spacing: 0;
+}
+
+.ns-special--santiago .ns-copy-block,
+.ns-special--donghoi .ns-copy-block {
+  padding-bottom: 34px;
+}
+
+.ns-special--santiago .ns-copy-block p,
+.ns-special--donghoi .ns-copy-block p {
+  color: #5f6b72;
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+
+.ns-guide-marker {
+  background: linear-gradient(transparent 58%, #ffe16a 58%);
+  font-weight: 700;
+}
+
+.ns-guide-route-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0 24px 34px;
+  list-style: none;
+}
+
+.ns-guide-route-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #324048;
+}
+
+.ns-guide-route-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  min-width: 22px;
+  height: 22px;
+  border: 1px solid var(--ns-guide-blue);
+  border-radius: 50%;
+  color: var(--ns-guide-blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ns-guide-route-step strong {
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+
+.ns-guide-subheading {
+  margin: 0;
+  padding: 0 24px 12px;
+  color: #35444d;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.ns-guide-table-wrap {
+  margin: 0 24px 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ns-guide-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ns-guide-table th,
+.ns-guide-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--ns-guide-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ns-guide-table th {
+  color: #277ba3;
+  font-weight: 700;
+  background: #f3fbff;
+}
+
+.ns-guide-timeline {
+  margin: 0 28px;
+}
+
+.ns-guide-timeline-item {
+  position: relative;
+  padding: 4px 0 24px 22px;
+  border-left: 2px solid var(--ns-guide-blue);
+}
+
+.ns-guide-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ns-guide-blue);
+}
+
+.ns-guide-timeline-item h4,
+.ns-guide-checklist-group h4,
+.ns-guide-food-list h4,
+.ns-guide-lodging-list h4,
+.ns-guide-include-group h4,
+.ns-guide-product-points h4,
+.ns-guide-optional h4 {
+  margin: 0 0 8px;
+  color: #2f3d45;
+  font-size: 17px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.ns-guide-day {
+  margin: 0 0 6px;
+  color: var(--ns-guide-blue);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ns-guide-timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 0 0 8px;
+}
+
+.ns-guide-timeline-meta span {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #72818a;
+}
+
+.ns-guide-timeline-item p:last-child {
+  margin: 0;
+  color: #5f6b72;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.ns-guide-note,
+.ns-guide-checklist {
+  margin: 0 28px 24px;
+  padding: 22px;
+  background: var(--ns-guide-paper);
+}
+
+.ns-guide-checklist {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ns-guide-checklist-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-guide-checklist-group li {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 0;
+  color: #5d5349;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ns-guide-checklist-group li span {
+  color: #a77b32;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ns-guide-food-list,
+.ns-guide-lodging-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 28px 20px;
+}
+
+.ns-guide-food-list article,
+.ns-guide-lodging-list article {
+  padding: 16px 0;
+  border-top: 1px solid var(--ns-guide-line);
+}
+
+.ns-guide-food-list p,
+.ns-guide-lodging-list p {
+  margin: 0 0 8px;
+  color: #5f6b72;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.ns-guide-food-list span {
+  color: #277ba3;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.ns-guide-arrival-steps {
+  margin: 0 28px 20px;
+  padding: 0;
+  counter-reset: arrival;
+  list-style: none;
+}
+
+.ns-guide-arrival-steps li {
+  counter-increment: arrival;
+  position: relative;
+  padding: 13px 0 13px 34px;
+  border-top: 1px solid var(--ns-guide-line);
+  color: #4f5e66;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ns-guide-arrival-steps li::before {
+  content: counter(arrival);
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ns-guide-blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+
+.ns-guide-faq {
+  margin: 0 28px 24px;
+}
+
+.ns-guide-faq details {
+  border-top: 1px solid var(--ns-guide-line);
+  padding: 16px 0;
+}
+
+.ns-guide-faq details:last-child {
+  border-bottom: 1px solid var(--ns-guide-line);
+}
+
+.ns-guide-faq summary {
+  cursor: pointer;
+  color: #2f3d45;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.ns-guide-faq p {
+  margin: 10px 0 0;
+  color: #5f6b72;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ns-guide-include-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0 28px 24px;
+}
+
+.ns-guide-include-group {
+  padding: 20px 0 0;
+  border-top: 2px solid #ffe16a;
+}
+
+.ns-guide-include-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-guide-include-group li {
+  position: relative;
+  padding: 7px 0 7px 18px;
+  border-bottom: 1px solid var(--ns-guide-line);
+  color: #4f5e66;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ns-guide-include-group li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ns-guide-blue);
+}
+
+.ns-guide-product-points .ns-guide-note {
+  margin-bottom: 28px;
+}
+
+.ns-guide-product-points .ns-guide-note p {
+  margin: 0;
+  color: #5d5349;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.ns-guide-cta {
+  margin: 4px 28px 28px;
+  padding: 18px 0;
+  border-top: 2px solid #ffe16a;
+  border-bottom: 1px solid var(--ns-guide-line);
+  color: #2f3d45;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.65;
+  text-align: center;
+}
+
+@media (min-width: 820px) {
+  .ns-waterpark-image {
+    margin: 14px -28px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ns-special {
+    max-width: 100%;
+  }
+
+  .ns-top {
+    padding: 56px 20px 26px;
+  }
+
+  .ns-main-title {
+    font-size: 24px;
+  }
+
+  .ns-main-subtitle {
+    font-size: 15px;
+  }
+
+  .ns-section-heading h3 {
+    font-size: 24px;
+  }
+
+  .ns-copy-block {
+    padding: 22px 24px 52px;
+  }
+
+  .ns-copy-block p {
+    font-size: 14px;
+  }
+
+  .ns-waterpark-image {
+    margin-top: 6px;
+  }
+
+  .ns-waterpark-image img {
+    border-width: 0;
+    box-shadow: none;
+  }
+
+  .ns-waterpark-image + .ns-image-grid,
+  .ns-waterpark-image + .ns-full-image {
+    margin-top: 4px;
+  }
+
+  .ns-special--santiago .ns-guide-hero,
+  .ns-special--donghoi .ns-guide-hero {
+    padding: 58px 20px 32px;
+  }
+
+  .ns-guide-title {
+    font-size: 25px;
+  }
+
+  .ns-guide-subtitle {
+    font-size: 15px;
+  }
+
+  .ns-guide-facts {
+    justify-content: flex-start;
+    padding: 0 22px 38px;
+  }
+
+  .ns-special--santiago .ns-section-heading h3,
+  .ns-special--donghoi .ns-section-heading h3 {
+    font-size: 23px;
+  }
+
+  .ns-guide-route-list {
+    justify-content: flex-start;
+    padding: 0 22px 30px;
+  }
+
+  .ns-guide-table-wrap {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .ns-guide-table {
+    font-size: 14px;
+  }
+
+  .ns-guide-timeline,
+  .ns-guide-checklist,
+  .ns-guide-food-list,
+  .ns-guide-lodging-list,
+  .ns-guide-arrival-steps,
+  .ns-guide-faq,
+  .ns-guide-include-wrap,
+  .ns-guide-product-points .ns-guide-note,
+  .ns-guide-cta {
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+
+  .ns-guide-checklist,
+  .ns-guide-food-list,
+  .ns-guide-lodging-list,
+  .ns-guide-include-wrap,
+  .ns-guide-point-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ns-guide-point-list {
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+}
