@@ -20,10 +20,10 @@
 
 | File | Memo |
 |---|---|
-| `05-manado-harbor.png` | 기존 보유 PNG |
-| `07-ban-hin-kiong-temple.png` | 기존 보유 PNG |
 | `manado-bunaken-map-cute.png` | 생성 지도 이미지 |
 | `icon-camera.svg` | 섹션 아이콘 |
 | `icon-beach.svg` | 섹션 아이콘 |
+
+공식 원본이 확인되지 않은 게티 캡처 PNG는 전달본에서 제외했습니다.
 
 `1475551409`는 에디토리얼 전용 이미지입니다. 공개 사용 전 표기와 사용 범위를 확인해야 합니다.
