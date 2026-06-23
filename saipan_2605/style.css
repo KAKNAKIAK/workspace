@@ -67,7 +67,10 @@ img {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
   overflow-wrap: anywhere;
   word-break: break-all;
-  pointer-events: none;
+  cursor: text;
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .event_inner {
