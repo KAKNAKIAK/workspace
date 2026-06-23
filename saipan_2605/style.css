@@ -214,6 +214,171 @@ img {
   background: var(--paper);
 }
 
+.flight-section {
+  padding: 72px 42px 62px;
+  background: #eef4f7;
+}
+
+.flight-section__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flight-title {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.flight-title h2 {
+  margin: 0;
+  color: #00506a;
+  font-family: var(--display);
+  font-size: 54px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.flight-title h2 span {
+  color: #d5161b;
+}
+
+.flight-title p {
+  margin: 18px 0 0;
+  color: #30343a;
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.flight-title p strong {
+  color: #00a986;
+}
+
+.flight-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.flight-card {
+  overflow: hidden;
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(18, 26, 34, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(7, 58, 98, 0.12);
+}
+
+.flight-card__head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 56px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.25;
+  text-align: center;
+  background: #ffac00;
+}
+
+.flight-card__head span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+}
+
+.flight-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px minmax(0, 1fr);
+  align-items: center;
+  min-height: 92px;
+  padding: 18px 26px 10px;
+  color: #0d1320;
+  text-align: center;
+}
+
+.flight-card__body time {
+  font-family: var(--display);
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.flight-card__body sup {
+  margin-left: 4px;
+  color: #d5161b;
+  font-size: 18px;
+  vertical-align: super;
+}
+
+.flight-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #d42429;
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.flight-path span {
+  position: relative;
+  display: block;
+  width: 98px;
+  height: 22px;
+}
+
+.flight-path span::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, #d42429 0 9px, transparent 9px 19px, #d42429 19px 79px, transparent 79px 89px, #d42429 89px 100%);
+  transform: translateY(-50%);
+}
+
+.flight-path span::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "\2708";
+  color: #d42429;
+  font-size: 30px;
+  line-height: 1;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.flight-card__date {
+  margin: 0;
+  padding: 0 18px 18px;
+  color: #5d6870;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.flight-note {
+  max-width: 760px;
+  margin: 18px auto 0;
+  color: #68727a;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
 .section__title {
   text-align: center;
   color: var(--paper);
@@ -942,6 +1107,22 @@ img {
     padding: 56px 24px 66px;
   }
 
+  .flight-section {
+    padding: 56px 24px 50px;
+  }
+
+  .flight-title h2 {
+    font-size: 40px;
+  }
+
+  .flight-title p {
+    font-size: 20px;
+  }
+
+  .flight-route-grid {
+    grid-template-columns: 1fr;
+  }
+
   .section__title h2 {
     font-size: 36px;
   }
@@ -1082,6 +1263,59 @@ img {
 
   .hero__price strong {
     font-size: 28px;
+  }
+
+  .flight-section {
+    padding: 46px 14px 42px;
+  }
+
+  .flight-title h2 {
+    font-size: 34px;
+  }
+
+  .flight-title p {
+    font-size: 17px;
+  }
+
+  .flight-card {
+    border-radius: 14px;
+  }
+
+  .flight-card__head {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .flight-card__body {
+    grid-template-columns: minmax(0, 1fr) 74px minmax(0, 1fr);
+    min-height: 82px;
+    padding: 16px 8px 8px;
+  }
+
+  .flight-card__body time {
+    font-size: 26px;
+  }
+
+  .flight-card__body sup {
+    margin-left: 2px;
+    font-size: 13px;
+  }
+
+  .flight-path span {
+    width: 62px;
+  }
+
+  .flight-path span::after {
+    font-size: 23px;
+  }
+
+  .flight-path {
+    font-size: 15px;
+  }
+
+  .flight-note {
+    max-width: 330px;
+    font-size: 13px;
   }
 
   .section__title h2,
