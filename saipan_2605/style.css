@@ -242,10 +242,6 @@ img {
   letter-spacing: 0;
 }
 
-.flight-title h2 span {
-  color: #d5161b;
-}
-
 .flight-title p {
   margin: 18px 0 0;
   color: #30343a;
@@ -358,28 +354,6 @@ img {
   font-size: 30px;
   line-height: 1;
   transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.flight-card__date {
-  margin: 0;
-  padding: 0 18px 18px;
-  color: #5d6870;
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.35;
-  text-align: center;
-}
-
-.flight-note {
-  max-width: 760px;
-  margin: 18px auto 0;
-  color: #68727a;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: center;
-  overflow-wrap: anywhere;
-  word-break: keep-all;
 }
 
 .section__title {
@@ -1314,11 +1288,6 @@ img {
 
   .flight-path {
     font-size: 15px;
-  }
-
-  .flight-note {
-    max-width: 330px;
-    font-size: 13px;
   }
 
   .section__title h2,
