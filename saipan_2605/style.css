@@ -47,6 +47,29 @@ img {
   max-width: 100%;
 }
 
+.designer-handoff .asset-label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 5;
+  max-width: calc(100% - 20px);
+  padding: 6px 9px 7px;
+  color: #fff;
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: left;
+  background: rgba(18, 26, 34, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  pointer-events: none;
+}
+
 .event_inner {
   width: 100%;
   padding: 0;
@@ -95,6 +118,11 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center bottom;
+}
+
+.designer-handoff .hero > .asset-label {
+  top: auto;
+  bottom: 10px;
 }
 
 .hero__copy {
@@ -426,6 +454,10 @@ img {
   margin-top: 0;
 }
 
+.designer-handoff .tab-list {
+  display: none;
+}
+
 .tab-panel {
   position: relative;
   padding: 66px 82px 78px;
@@ -524,10 +556,15 @@ img {
 }
 
 .tab-feature-grid figure {
+  position: relative;
   overflow: hidden;
   margin: 0;
   background: #f6fbf9;
   border-radius: 8px;
+}
+
+.designer-handoff .tab-panel + .tab-panel {
+  border-top: 12px solid #fff;
 }
 
 .tab-feature-grid img {
