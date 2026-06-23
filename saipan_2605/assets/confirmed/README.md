@@ -1,30 +1,22 @@
-# Saipan Detail Confirmed Assets
+# Saipan 2605 Used Assets
 
-이 폴더는 현재 HTML 시안에 연결된 확정 이미지 모음입니다.
-시안 위 라벨과 아래 파일명이 동일하므로, 화면을 보면서 필요한 사진을 바로 찾을 수 있습니다.
+이 레포의 `saipan_2605/assets`에는 현재 기획전 HTML에서 실제로 사용하는 이미지만 남깁니다.
+화면의 파일명 라벨은 복사 가능한 텍스트이므로, 디자이너가 그대로 복사해 에셋 폴더에서 검색할 수 있습니다.
 
 | Section | File |
 |---|---|
-| HERO 01 | `01-hero-01-managaha-island.jpg` |
-| HERO 02 | `01-hero-02-crowne-plaza-resort.jpg` |
-| HERO 03 | `01-hero-03-saipan-church.jpg` |
-| HERO 04 | `01-hero-04-managaha-aerial-credit-required.jpg` |
-| CHECK 01 | `02-check-01-air-hotel-promo.jpg` |
-| CHECK 02 | `02-check-03-late-checkout.jpg` |
-| CHECK 03 | `02-check-03-ocean-view-upgrade.jpg` |
-| CHECK 04 | `02-check-04-saipan-central-hotel.jpg` |
-| HOTEL | `03-hotel-crowne-plaza-exterior.jpg` |
-| FACILITY 01 | `04-facility-01-pool-kids.jpg` |
-| FACILITY 02 | `04-facility-02-micro-beach.jpg` |
-| FACILITY 03 | `04-facility-03-kidsclub.jpg` |
-| FACILITY 04 | `04-facility-04-atari-dinnershow.jpg` |
-| FACILITY 05 | `04-facility-05-fitness-sports.jpg` |
-| FACILITY 06 | `04-facility-06-paddle-snorkeling.jpg` |
-| BEST 01 | `05-best-01-micro-beach-heart.jpg` |
-| BEST 02 | `05-best-02-managaha-island.jpg` |
-| BEST 03 | `05-best-03-grotto.jpg` |
-| BEST 04 | `05-best-04-north-tour.jpg` |
-| BEST 05 | `05-best-05-garapan-city.jpg` |
-| BEST 06 | `05-best-06-saipan-sunset.jpg` |
+| HERO | `assets/confirmed/01-hero-04-managaha-aerial-credit-required.jpg` |
+| 크라운플라자 대표 | `assets/크라운 플라자 사진자료/Hero Shot 1.jpg` |
+| 크라운플라자 키즈풀 | `assets/크라운 플라자 사진자료/Kids Pool.jpg` |
+| 크라운플라자 위치 | `assets/크라운 플라자 사진자료/Marketplace View.jpg` |
+| 크라운플라자 객실 | `assets/크라운 플라자 사진자료/오션뷰룸1.jpg` |
+| PIC 실버 대표 | `assets/PIC/DJI_0779.jpg` |
+| PIC 액티비티풀 | `assets/PIC/액티비티풀.jpg` |
+| PIC 키즈 프로그램 | `assets/PIC/PIC 잉글리시 클럽 (1).jpg` |
+| PIC 포인트브레이크 | `assets/PIC/포인트브레이크.jpg` |
+| PIC 골드 대표 | `assets/PIC/비치BBQ.jpg` |
+| PIC 객실 | `assets/PIC/Superior.jpg` |
+| PIC 비치 | `assets/PIC/PIC 비치.jpg` |
+| PIC 캐릭터 | `assets/PIC/Siheky (1).jpg` |
 
 `credit-required`가 붙은 파일은 공개 사용 전 크레딧 표기 조건을 확인해야 합니다.
