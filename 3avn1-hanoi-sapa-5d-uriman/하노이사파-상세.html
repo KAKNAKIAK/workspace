@@ -1,0 +1,612 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1200">
+  <title>[단독 전일정] 하노이&사파 5일 우리만</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-width: 1180px;
+      font-family: "Malgun Gothic", Arial, sans-serif;
+      color: #1f211f;
+      background: #f4f1ea;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { width: 100%; overflow: hidden; }
+    .section { width: 100%; }
+    .inner { width: 1100px; margin: 0 auto; position: relative; }
+    .hero {
+      position: relative;
+      min-height: 760px;
+      background:
+        linear-gradient(90deg, rgba(20, 45, 33, .88), rgba(20, 45, 33, .56) 42%, rgba(20, 45, 33, .04) 78%),
+        url("assets/generated_golden_rice_sapa_valley_01.png") center/cover no-repeat;
+      color: #fff;
+    }
+    .hero .inner { min-height: 760px; display: flex; align-items: center; }
+    .hero-copy { width: 585px; padding-top: 30px; }
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      height: 36px;
+      padding: 0 16px;
+      border: 1px solid rgba(255,255,255,.45);
+      font-size: 15px;
+      font-weight: 700;
+      background: rgba(255,255,255,.12);
+    }
+    h1 {
+      margin: 28px 0 18px;
+      font-size: 66px;
+      line-height: 1.08;
+      font-weight: 900;
+    }
+    .hero-sub {
+      margin: 0 0 34px;
+      font-size: 24px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 0 0 36px;
+      padding: 0;
+      list-style: none;
+    }
+    .hero-points li {
+      border-left: 4px solid #f7cd63;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.14);
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .hero-image-label {
+      position: absolute;
+      right: 44px;
+      bottom: 34px;
+      max-width: 360px;
+      padding: 9px 14px;
+      background: rgba(16, 61, 45, .88);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+      pointer-events: auto;
+      user-select: text;
+      -webkit-user-select: text;
+      cursor: text;
+      z-index: 3;
+    }
+    .price-note { font-size: 14px; line-height: 1.55; opacity: .9; }
+    .band-green { background: #103d2d; color: #fff; }
+    .band-cream { background: #f4f1ea; }
+    .band-white { background: #fff; }
+    .band-mist { background: #e7efe6; }
+    .lead-panel {
+      padding: 78px 0 44px;
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .lead-gallery { padding-bottom: 78px; }
+    .nowrap { white-space: nowrap; }
+    .section-title {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.22;
+      font-weight: 900;
+    }
+    .lead-text {
+      margin: 10px 0 0;
+      font-size: 19px;
+      line-height: 1.9;
+      color: #4b4d48;
+    }
+    .band-green .lead-text { color: rgba(255,255,255,.82); }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .benefit {
+      min-height: 178px;
+      padding: 24px 22px;
+      background: #fff;
+      border-top: 5px solid #0d7a54;
+    }
+    .benefit strong {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 21px;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+    .benefit p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #555a54;
+      word-break: keep-all;
+    }
+    .route {
+      padding: 86px 0;
+      background: #133826;
+      color: #fff;
+    }
+    .route .lead-text { color: rgba(255,255,255,.78); }
+    .route-card-grid {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .route-card {
+      overflow: hidden;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .route-card figure { margin: 0; position: relative; overflow: hidden; background: #fff; }
+    .route-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+    .route-copy {
+      min-height: 164px;
+      padding: 18px 16px 20px;
+    }
+    .day { display: block; color: #f7cd63; font-weight: 900; margin-bottom: 12px; }
+    .route-copy h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.28; }
+    .route-copy p { margin: 0; font-size: 14px; line-height: 1.55; opacity: .86; word-break: keep-all; }
+    .photo-slab { padding: 94px 0; }
+    .split {
+      display: grid;
+      grid-template-columns: 540px 1fr;
+      gap: 58px;
+      align-items: center;
+    }
+    .split.reverse { grid-template-columns: 1fr 540px; }
+    .photo {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+    .photo.tall { aspect-ratio: 4 / 5; }
+    .labeled-photo {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+    .image-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      max-width: calc(100% - 32px);
+      padding: 8px 12px;
+      background: rgba(16, 61, 45, .9);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+    .copy h2 {
+      margin: 0 0 18px;
+      font-size: 44px;
+      line-height: 1.22;
+      font-weight: 900;
+    }
+    .copy p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.95;
+      color: #484c47;
+    }
+    .check-list {
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .check-list li {
+      position: relative;
+      padding-left: 22px;
+      margin: 10px 0;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #333833;
+    }
+    .check-list li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 8px;
+      height: 8px;
+      background: #0d7a54;
+    }
+    .gallery-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+    .gallery-2x2 figure { margin: 0; background: #fff; position: relative; overflow: hidden; }
+    .gallery-2x2 img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+    .route .gallery-2x2 { margin-top: 34px; }
+    .hotel-gallery { margin-top: 34px; }
+    .value-stack {
+      padding: 86px 0;
+      background: #fff;
+    }
+    .value-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .value-card {
+      display: grid;
+      grid-template-columns: 235px 1fr;
+      min-height: 214px;
+      overflow: hidden;
+      border: 1px solid #d9ded5;
+      background: #fbfaf7;
+    }
+    .value-card figure { margin: 0; position: relative; overflow: hidden; background: #ddd; }
+    .value-card img { width: 100%; height: 100%; min-height: 214px; object-fit: cover; display: block; }
+    .value-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px 26px;
+    }
+    .value-copy h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.35; word-break: keep-all; }
+    .value-copy p { margin: 0; font-size: 16px; line-height: 1.75; color: #565a54; word-break: keep-all; }
+    .hotel {
+      padding: 94px 0;
+      background: #e7efe6;
+    }
+    .hotel-card {
+      display: grid;
+      grid-template-columns: 530px 1fr;
+      gap: 48px;
+      background: #fff;
+      padding: 34px;
+      border: 1px solid #d6dfd3;
+    }
+    .hotel-card .labeled-photo { align-self: start; }
+    .hotel-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+    .hotel-card h2 { margin: 4px 0 14px; font-size: 36px; line-height: 1.25; }
+    .hotel-card p { margin: 0; font-size: 17px; line-height: 1.8; color: #50554e; }
+    .condition {
+      padding: 84px 0;
+      background: #163525;
+      color: #fff;
+    }
+    .condition .box {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .price {
+      padding: 26px;
+      background: #f7cd63;
+      color: #17251b;
+    }
+    .price b { display: block; font-size: 40px; margin-top: 6px; }
+    .condition ul { margin: 0; padding: 0; list-style: none; }
+    .condition li { margin: 0 0 13px; font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.86); }
+    .small { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,.72); }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="section hero">
+      <div class="inner">
+        <div class="hero-copy">
+          <div class="eyebrow">단독 전일정 · 하노이&사파 5일</div>
+          <h1>진짜 사파를 만나는<br>베트남 북부 여행</h1>
+          <p class="hero-sub">하노이 도심의 활기와 사파 고산지대의 비경을 우리 일행만의 속도로 누립니다. 전용 차량과 한국어 가이드가 전 일정을 밀착 케어하여, 떠나는 순간부터 돌아오는 길까지 온전히 우리만의 여행으로 남습니다.</p>
+          <ul class="hero-points">
+            <li>NO쇼핑 · NO옵션</li>
+            <li>NO 가이드팁</li>
+            <li>판시판 정상까지 3종 교통수단 포함</li>
+            <li>최소 2명 단독 진행</li>
+          </ul>
+        </div>
+      </div>
+      <span class="hero-image-label">generated_golden_rice_sapa_valley_01.png</span>
+    </section>
+
+    <section class="section band-cream">
+      <div class="inner lead-panel">
+        <div>
+          <h2 class="section-title">하노이의 도심에서<br>사파의 능선까지, <span class="nowrap">5일</span></h2>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit">
+            <strong>우리끼리 이동</strong>
+            <p>다른 팀과 조인하지 않는 단독 행사로 가족, 친구, 소규모 모임에 잘 맞습니다.</p>
+          </div>
+          <div class="benefit">
+            <strong>NO 쇼핑 · NO 옵션 · NO 팁</strong>
+            <p>쇼핑센터 방문과 옵션 강요가 없습니다. 가이드 팁까지 포함하여 현지에서 발생하는 불필요한 추가 비용을 원천 차단했습니다.</p>
+          </div>
+          <div class="benefit">
+            <strong>사파 핵심 포함</strong>
+            <p>판시판 모노레일, 케이블카, 트램과 타반마을 트레킹을 일정 안에 담았습니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inner gallery-2x2 lead-gallery">
+        <figure>
+          <img src="assets/037_d965beec0cabb052506ee9c7ed50847d.jpg" alt="하노이 호안끼엠">
+          <span class="image-label">037_d965beec0cabb052506ee9c7ed50847d.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/sapa-terrace-product.jpg" alt="사파 계단식 논">
+          <span class="image-label">sapa-terrace-product.jpg</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section route">
+      <div class="inner">
+        <h2 class="section-title">하노이&사파 5일간의 동선</h2>
+        <div class="route-card-grid">
+          <article class="route-card">
+            <figure>
+              <img src="assets/generated-route-day1-hanoi-sleeper-train.png" alt="하노이에서 야간 기차로 이어지는 동선">
+              <span class="image-label">generated-route-day1-hanoi-sleeper-train.png</span>
+            </figure>
+            <div class="route-copy">
+              <span class="day">1일차</span>
+              <h3>인천-하노이</h3>
+              <p>예술거리, 롱비엔 기차역, 세라믹 벽화도로, 마사지 후 야간 기차</p>
+            </div>
+          </article>
+          <article class="route-card">
+            <figure>
+              <img src="assets/generated-route-day2-fansipan-transport.png" alt="판시판으로 오르는 산악 교통">
+              <span class="image-label">generated-route-day2-fansipan-transport.png</span>
+            </figure>
+            <div class="route-copy">
+              <span class="day">2일차</span>
+              <h3>사파(판시판)</h3>
+              <p>판시판 모노레일, 케이블카, 트램, 카페와 자유시간</p>
+            </div>
+          </article>
+          <article class="route-card">
+            <figure>
+              <img src="assets/generated-route-day3-sapa-trekking.png" alt="사파 계단식 논 트레킹 동선">
+              <span class="image-label">generated-route-day3-sapa-trekking.png</span>
+            </figure>
+            <div class="route-copy">
+              <span class="day">3일차</span>
+              <h3>사파(트레킹)</h3>
+              <p>타반마을 트레킹, 실버폭포, 헤븐게이트</p>
+            </div>
+          </article>
+          <article class="route-card">
+            <figure>
+              <img src="assets/034_f40a28229c936b759d1266bb1667360b.png" alt="사파에서 하노이로 돌아오는 슬리핑버스">
+              <span class="image-label">034_f40a28229c936b759d1266bb1667360b.png</span>
+            </figure>
+            <div class="route-copy">
+              <span class="day">4일차</span>
+              <h3>사파-하노이</h3>
+              <p>VIP 슬리핑버스, 바딘광장, 호안끼엠, 구시가지 전동카</p>
+            </div>
+          </article>
+          <article class="route-card">
+            <figure>
+              <img src="assets/generated-route-day5-airport-return.png" alt="하노이 공항에서 귀국하는 동선">
+              <span class="image-label">generated-route-day5-airport-return.png</span>
+            </figure>
+            <div class="route-copy">
+              <span class="day">5일차</span>
+              <h3>인천 도착</h3>
+              <p>노이바이 국제공항 출발 후 인천 도착</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section photo-slab band-white">
+      <div class="inner split reverse">
+        <div class="copy">
+          <h2>야간 기차와 슬리핑버스, 이동마저 여행처럼</h2>
+          <p>하노이와 사파를 오가는 길 자체가 여정의 일부가 됩니다. 사파로 향하는 밤은 야간 슬리핑 기차에서 창밖 풍경과 함께 보내고, 하노이로 돌아올 때는 VIP 슬리핑버스로 편안하게 이동합니다.</p>
+        </div>
+        <figure class="labeled-photo">
+          <img class="photo" src="assets/hanoi-train-street-local.jpg" alt="하노이 열차">
+          <span class="image-label">hanoi-train-street-local.jpg</span>
+        </figure>
+      </div>
+      <div class="inner gallery-2x2">
+        <figure>
+          <img src="assets/016_a2fb3cefb07d63f24983d1437be1cfc4.jpg" alt="롱비엔 기차역">
+          <span class="image-label">016_a2fb3cefb07d63f24983d1437be1cfc4.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/030_872e2cd5107d035ac8ad43862cabdd8a.png" alt="하노이 기차역">
+          <span class="image-label">030_872e2cd5107d035ac8ad43862cabdd8a.png</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section photo-slab band-mist">
+      <div class="inner split">
+        <figure class="labeled-photo">
+          <img class="photo" src="assets/022_06f7f3311b0cc64d4aa7002971aafcbc.jpg" alt="판시판 케이블카">
+          <span class="image-label">022_06f7f3311b0cc64d4aa7002971aafcbc.jpg</span>
+        </figure>
+        <div class="copy">
+          <h2>모노레일·케이블카·트램으로 오르는 판시판</h2>
+          <p>인도차이나 최고봉 판시판에 오르는 모노레일·케이블카·트램이 모두 포함됩니다. 따로 예매할 것 없이, 가이드와 함께 편하게 갈아타며 정상까지 오릅니다.</p>
+        </div>
+      </div>
+      <div class="inner gallery-2x2">
+        <figure>
+          <img src="assets/059_9f06105dfcac0cd22a493b212b337046 (1).png" alt="판시판 케이블카">
+          <span class="image-label">059_9f06105dfcac0cd22a493b212b337046 (1).png</span>
+        </figure>
+        <figure>
+          <img src="assets/050_1583a68851e4142e7362d0abec5d90c8.png_3.jpg" alt="판시판 정상">
+          <span class="image-label">050_1583a68851e4142e7362d0abec5d90c8.png_3.jpg</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section photo-slab band-white">
+      <div class="inner split reverse">
+        <div class="copy">
+          <h2>타반마을과 헤븐게이트에서 만나는 절경</h2>
+          <p>초록빛 계단식 논을 따라 타반마을을 걷고, 실버폭포를 거쳐 헤븐게이트의 탁 트인 파노라마 뷰를 만납니다. 도시와는 전혀 다른 청량한 공기를 호흡합니다.</p>
+        </div>
+        <figure class="labeled-photo">
+          <img class="photo" src="assets/generated_golden_rice_sapa_valley_01.png" alt="타반마을 계곡">
+          <span class="image-label">generated_golden_rice_sapa_valley_01.png</span>
+        </figure>
+      </div>
+      <div class="inner gallery-2x2">
+        <figure>
+          <img src="assets/046_ed1a4da0ac9bcc293f3422bb9a2f262c.jpg_3.jpg" alt="사파 계단식 논">
+          <span class="image-label">046_ed1a4da0ac9bcc293f3422bb9a2f262c.jpg_3.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/051_166e2686b80307eb5ee84d065fb21df4.png" alt="사파 계단식 논">
+          <span class="image-label">051_166e2686b80307eb5ee84d065fb21df4.png</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section photo-slab band-mist">
+      <div class="inner split">
+        <figure class="labeled-photo">
+          <img class="photo" src="assets/hanoi-longbien-product.jpg" alt="하노이 호안끼엠 야경">
+          <span class="image-label">hanoi-longbien-product.jpg</span>
+        </figure>
+        <div class="copy">
+          <h2>오가는 길에 두 번, 하노이의 거리</h2>
+          <p>예술거리에서 시작해 롱비엔 기차역, 호안끼엠 호수로 이어지는 하노이 도심. 첫날과 마지막을 도시의 활기로 채우고, 전신 마사지로 편안하게 마무리합니다.</p>
+        </div>
+      </div>
+      <div class="inner gallery-2x2">
+        <figure>
+          <img src="assets/hanoi-train-street-night-local.jpg" alt="하노이 거리">
+          <span class="image-label">hanoi-train-street-night-local.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/hanoi-old-quarter-scooter-local.jpg" alt="하노이 구시가지">
+          <span class="image-label">hanoi-old-quarter-scooter-local.jpg</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section hotel">
+      <div class="inner hotel-card">
+        <figure class="labeled-photo">
+          <img src="assets/hotel-sapa-square-winwin-exterior-day.jpg" alt="호텔 사파 스퀘어 외관">
+          <span class="image-label">hotel-sapa-square-winwin-exterior-day.jpg</span>
+        </figure>
+        <div>
+          <h2>호수와 광장이 도보 거리, 사파 중심가 숙박</h2>
+          <p>사파 호수와 광장이 걸어서 닿는 시내 중심 4성급 호텔에 묵습니다. 외곽 호텔과 달리 이동에 시간을 쓰지 않고, 일정을 마친 저녁에도 호숫가와 광장의 분위기를 가까이 즐길 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="inner gallery-2x2 hotel-gallery">
+        <figure>
+          <img src="assets/hotel-sapa-square-winwin-exterior-night.jpg" alt="호텔 사파 스퀘어 야간 외관">
+          <span class="image-label">hotel-sapa-square-winwin-exterior-night.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/hotel-sapa-square-winwin-reception.jpg" alt="호텔 사파 스퀘어 리셉션">
+          <span class="image-label">hotel-sapa-square-winwin-reception.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/hotel-sapa-square-winwin-buffet.jpg" alt="호텔 사파 스퀘어 레스토랑">
+          <span class="image-label">hotel-sapa-square-winwin-buffet.jpg</span>
+        </figure>
+        <figure>
+          <img src="assets/hotel-sapa-square-winwin-room.jpg" alt="호텔 사파 스퀘어 객실">
+          <span class="image-label">hotel-sapa-square-winwin-room.jpg</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section photo-slab band-white">
+      <div class="inner split">
+        <figure class="labeled-photo">
+          <img class="photo" src="assets/official-GettyImages-641938824.jpg" alt="베트남 현지식">
+          <span class="image-label">official-GettyImages-641938824.jpg</span>
+        </figure>
+        <div class="copy">
+          <h2>일정 곳곳에 녹아든 베트남 현지식</h2>
+          <p>잘 먹는 것도 여행의 일부입니다. 따뜻한 쌀국수 한 그릇, 갓 구운 반미 한 입까지 현지의 맛이 가득합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section value-stack">
+      <div class="inner">
+        <h2 class="section-title">하나하나 챙길 것 없이 다 들어 있습니다</h2>
+        <div class="value-card-grid">
+          <article class="value-card">
+            <figure>
+              <img src="assets/generated-included-sapa-hotel-morning.png" alt="사파 중심 호텔과 오전 출발 분위기">
+              <span class="image-label">generated-included-sapa-hotel-morning.png</span>
+            </figure>
+            <div class="value-copy">
+              <h3>오전 출발 항공과 사파 중심가 호텔</h3>
+              <p>다른 여행 상품과 달리 오전에 출발해, 도착 당일부터 온전히 여행을 즐깁니다. 숙소는 사파 호수와 광장이 도보 거리에 있는 호텔로, 관광을 마치고 돌아와 쉬기에도 저녁 산책을 나서기에도 좋은 입지입니다.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <figure>
+              <img src="assets/generated-private-vehicle-guide.png" alt="전용차량과 현지 가이드">
+              <span class="image-label">generated-private-vehicle-guide.png</span>
+            </figure>
+            <div class="value-copy">
+              <h3>우리만의 차량과 가이드</h3>
+              <p>다른 팀과 섞이지 않는 전용차량으로, 한국어 가능 현지 가이드가 전 일정을 안내합니다.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <figure>
+              <img src="assets/generated-vietnam-local-food.png" alt="베트남 현지식">
+              <span class="image-label">generated-vietnam-local-food.png</span>
+            </figure>
+            <div class="value-copy">
+              <h3>끼니마다 즐기는 베트남 현지식</h3>
+              <p>반미, 쌀국수, 판시판 뷔페, 코코넛 카레까지 현지의 맛이 끼니마다 준비되어 있습니다. 석식은 가이드 추천 맛집에서 자유롭게 즐기세요.</p>
+            </div>
+          </article>
+          <article class="value-card">
+            <figure>
+              <img src="assets/generated-travel-massage-spa.png" alt="마사지와 휴식">
+              <span class="image-label">generated-travel-massage-spa.png</span>
+            </figure>
+            <div class="value-copy">
+              <h3>마사지 2회로 여독까지</h3>
+              <p>걷고 이동한 하루의 피로를 마사지로 마무리합니다. 팁까지 포함이라 따로 챙길 것이 없습니다.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
+
