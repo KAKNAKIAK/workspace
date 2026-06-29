@@ -48,6 +48,7 @@
     }
     .hero-sub {
       margin: 0 0 34px;
+      max-width: 560px;
       font-size: 24px;
       line-height: 1.6;
       font-weight: 500;
@@ -137,6 +138,23 @@
       color: #555a54;
       word-break: keep-all;
     }
+    .benefit-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .benefit-tags li {
+      padding: 7px 9px;
+      background: #e8f1e8;
+      color: #0f5d41;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 900;
+      word-break: keep-all;
+    }
     .route {
       padding: 86px 0;
       background: #133826;
@@ -210,6 +228,34 @@
       line-height: 1.95;
       color: #484c47;
     }
+    .keyword-list {
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .keyword-list li {
+      display: grid;
+      grid-template-columns: 106px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 13px 0;
+      border-top: 1px solid rgba(13, 122, 84, .22);
+      font-size: 16px;
+      line-height: 1.55;
+      color: #3f453f;
+      word-break: keep-all;
+    }
+    .keyword-list li:last-child { border-bottom: 1px solid rgba(13, 122, 84, .22); }
+    .keyword-list b {
+      color: #0d7a54;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+    .keyword-list span { display: block; }
+    .keyword-list li span:only-child { grid-column: 1 / -1; }
     .check-list {
       margin: 26px 0 0;
       padding: 0;
@@ -270,6 +316,23 @@
     }
     .value-copy h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.35; word-break: keep-all; }
     .value-copy p { margin: 0; font-size: 16px; line-height: 1.75; color: #565a54; word-break: keep-all; }
+    .value-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .value-keywords li {
+      padding: 7px 9px;
+      background: #e8f1e8;
+      color: #164231;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 900;
+      word-break: keep-all;
+    }
     .hotel {
       padding: 94px 0;
       background: #e7efe6;
@@ -315,7 +378,7 @@
         <div class="hero-copy">
           <div class="eyebrow">단독 전일정 · 하노이&사파 5일</div>
           <h1>진짜 사파를 만나는<br>베트남 북부 여행</h1>
-          <p class="hero-sub">하노이 도심의 활기와 사파 고산지대의 비경을 우리 일행만의 속도로 누립니다. 전용 차량과 한국어 가이드가 전 일정을 밀착 케어하여, 떠나는 순간부터 돌아오는 길까지 온전히 우리만의 여행으로 남습니다.</p>
+          <p class="hero-sub">우리만의 속도로 즐기는 여행.</p>
           <ul class="hero-points">
             <li>NO쇼핑 · NO옵션</li>
             <li>NO 가이드팁</li>
@@ -335,15 +398,27 @@
         <div class="benefit-grid">
           <div class="benefit">
             <strong>우리끼리 이동</strong>
-            <p>다른 팀과 조인하지 않는 단독 행사로 가족, 친구, 소규모 모임에 잘 맞습니다.</p>
+            <ul class="benefit-tags">
+              <li>단독 행사</li>
+              <li>전용차량</li>
+              <li>소규모 맞춤</li>
+            </ul>
           </div>
           <div class="benefit">
             <strong>NO 쇼핑 · NO 옵션 · NO 팁</strong>
-            <p>쇼핑센터 방문과 옵션 강요가 없습니다. 가이드 팁까지 포함하여 현지에서 발생하는 불필요한 추가 비용을 원천 차단했습니다.</p>
+            <ul class="benefit-tags">
+              <li>쇼핑센터 없음</li>
+              <li>옵션 강요 없음</li>
+              <li>가이드팁 포함</li>
+            </ul>
           </div>
           <div class="benefit">
             <strong>사파 핵심 포함</strong>
-            <p>판시판 모노레일, 케이블카, 트램과 타반마을 트레킹을 일정 안에 담았습니다.</p>
+            <ul class="benefit-tags">
+              <li>판시판 3종 이동수단 포함</li>
+              <li>타반마을 트레킹</li>
+              <li>헤븐게이트</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -371,7 +446,7 @@
             <div class="route-copy">
               <span class="day">1일차</span>
               <h3>인천-하노이</h3>
-              <p>예술거리, 롱비엔 기차역, 세라믹 벽화도로, 마사지 후 야간 기차</p>
+              <p>예술거리, 롱비엔 기차역, 세라믹 벽화도로, 마사지, 야간 기차</p>
             </div>
           </article>
           <article class="route-card">
@@ -426,7 +501,7 @@
       <div class="inner split reverse">
         <div class="copy">
           <h2>야간 기차와 슬리핑버스, 이동마저 여행처럼</h2>
-          <p>하노이와 사파를 오가는 길 자체가 여정의 일부가 됩니다. 사파로 향하는 밤은 야간 슬리핑 기차에서 창밖 풍경과 함께 보내고, 하노이로 돌아올 때는 VIP 슬리핑버스로 편안하게 이동합니다.</p>
+          <p>하노이-사파 야간 슬리핑 기차<br>사파-하노이 VIP 슬리핑버스로<br>긴 이동도 풍경을 즐기며 휴식 가능</p>
         </div>
         <figure class="labeled-photo">
           <img class="photo" src="assets/hanoi-train-street-local.jpg" alt="하노이 열차">
@@ -453,7 +528,6 @@
         </figure>
         <div class="copy">
           <h2>모노레일·케이블카·트램으로 오르는 판시판</h2>
-          <p>인도차이나 최고봉 판시판에 오르는 모노레일·케이블카·트램이 모두 포함됩니다. 따로 예매할 것 없이, 가이드와 함께 편하게 갈아타며 정상까지 오릅니다.</p>
         </div>
       </div>
       <div class="inner gallery-2x2">
@@ -472,7 +546,10 @@
       <div class="inner split reverse">
         <div class="copy">
           <h2>타반마을과 헤븐게이트에서 만나는 절경</h2>
-          <p>초록빛 계단식 논을 따라 타반마을을 걷고, 실버폭포를 거쳐 헤븐게이트의 탁 트인 파노라마 뷰를 만납니다. 도시와는 전혀 다른 청량한 공기를 호흡합니다.</p>
+          <ul class="keyword-list">
+            <li><span>초록빛 계단식 논과 타반마을 트렉킹</span></li>
+            <li><span>실버폭포·헤븐게이트 파노라마 등 포토 스팟</span></li>
+          </ul>
         </div>
         <figure class="labeled-photo">
           <img class="photo" src="assets/generated_golden_rice_sapa_valley_01.png" alt="타반마을 계곡">
@@ -499,7 +576,10 @@
         </figure>
         <div class="copy">
           <h2>오가는 길에 두 번, 하노이의 거리</h2>
-          <p>예술거리에서 시작해 롱비엔 기차역, 호안끼엠 호수로 이어지는 하노이 도심. 첫날과 마지막을 도시의 활기로 채우고, 전신 마사지로 편안하게 마무리합니다.</p>
+          <ul class="keyword-list">
+            <li><b>1일차 하노이</b><span>예술거리·롱비엔 기차역·세라믹 벽화도로</span></li>
+            <li><b>4일차 하노이</b><span>호안끼엠 호수·구시가지 전동카+마사지</span></li>
+          </ul>
         </div>
       </div>
       <div class="inner gallery-2x2">
@@ -522,7 +602,7 @@
         </figure>
         <div>
           <h2>호수와 광장이 도보 거리, 사파 중심가 숙박</h2>
-          <p>사파 호수와 광장이 걸어서 닿는 시내 중심 4성급 호텔에 묵습니다. 외곽 호텔과 달리 이동에 시간을 쓰지 않고, 일정을 마친 저녁에도 호숫가와 광장의 분위기를 가까이 즐길 수 있습니다.</p>
+          <p>사파 호수·광장 도보권 호텔 숙박으로<br>일정 후 산책과 휴식</p>
         </div>
       </div>
       <div class="inner gallery-2x2 hotel-gallery">
@@ -553,7 +633,7 @@
         </figure>
         <div class="copy">
           <h2>일정 곳곳에 녹아든 베트남 현지식</h2>
-          <p>잘 먹는 것도 여행의 일부입니다. 따뜻한 쌀국수 한 그릇, 갓 구운 반미 한 입까지 현지의 맛이 가득합니다.</p>
+          <p>쌀국수·반미·코코넛 카레 등<br>베트남 로컬 맛집 방문</p>
         </div>
       </div>
     </section>
@@ -568,8 +648,13 @@
               <span class="image-label">generated-included-sapa-hotel-morning.png</span>
             </figure>
             <div class="value-copy">
-              <h3>오전 출발 항공과 사파 중심가 호텔</h3>
-              <p>다른 여행 상품과 달리 오전에 출발해, 도착 당일부터 온전히 여행을 즐깁니다. 숙소는 사파 호수와 광장이 도보 거리에 있는 호텔로, 관광을 마치고 돌아와 쉬기에도 저녁 산책을 나서기에도 좋은 입지입니다.</p>
+              <h3>오전 출발 항공과 사파시내 호텔</h3>
+              <ul class="value-keywords">
+                <li>오전 출발</li>
+                <li>도착일부터 여행</li>
+                <li>호수·광장 도보권</li>
+                <li>저녁 산책 가능</li>
+              </ul>
             </div>
           </article>
           <article class="value-card">
@@ -579,7 +664,11 @@
             </figure>
             <div class="value-copy">
               <h3>우리만의 차량과 가이드</h3>
-              <p>다른 팀과 섞이지 않는 전용차량으로, 한국어 가능 현지 가이드가 전 일정을 안내합니다.</p>
+              <ul class="value-keywords">
+                <li>단독 전용차량</li>
+                <li>한국어 가능 가이드</li>
+                <li>전 일정 동행</li>
+              </ul>
             </div>
           </article>
           <article class="value-card">
@@ -589,7 +678,13 @@
             </figure>
             <div class="value-copy">
               <h3>끼니마다 즐기는 베트남 현지식</h3>
-              <p>반미, 쌀국수, 판시판 뷔페, 코코넛 카레까지 현지의 맛이 끼니마다 준비되어 있습니다. 석식은 가이드 추천 맛집에서 자유롭게 즐기세요.</p>
+              <ul class="value-keywords">
+                <li>반미</li>
+                <li>쌀국수</li>
+                <li>판시판 뷔페</li>
+                <li>코코넛 카레</li>
+                <li>추천 맛집 자유석식</li>
+              </ul>
             </div>
           </article>
           <article class="value-card">
@@ -599,7 +694,11 @@
             </figure>
             <div class="value-copy">
               <h3>마사지 2회로 여독까지</h3>
-              <p>걷고 이동한 하루의 피로를 마사지로 마무리합니다. 팁까지 포함이라 따로 챙길 것이 없습니다.</p>
+              <ul class="value-keywords">
+                <li>마사지 2회</li>
+                <li>팁 포함</li>
+                <li>피로 회복</li>
+              </ul>
             </div>
           </article>
         </div>
