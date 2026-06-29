@@ -1,0 +1,722 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[단독 전일정] 다낭 5일 저녁출발 우리만</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --ink: #172126;
+      --muted: #65727a;
+      --paper: #fffaf2;
+      --ivory: #fffdf7;
+      --sand: #f3eadb;
+      --teal: #0f827c;
+      --blue: #236a9f;
+      --coral: #e45f3f;
+      --yellow: #f7c948;
+      --line: rgba(23, 33, 38, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 1100px;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { overflow: hidden; }
+    .section {
+      width: 100%;
+      padding: 78px 0;
+    }
+    .inner {
+      width: 1100px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--coral);
+      font-size: 17px;
+      font-weight: 800;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: 76px;
+      min-height: 202px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+    h2 {
+      font-size: 46px;
+      line-height: 1.34;
+      font-weight: 900;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 1.28;
+      font-weight: 900;
+    }
+    p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+    .label {
+      position: absolute;
+      right: 14px;
+      bottom: 12px;
+      z-index: 2;
+      padding: 5px 8px;
+      border-radius: 4px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.54);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      height: 760px;
+      color: #fff;
+      background: #0e3945;
+    }
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+      animation: heroFade 12s infinite;
+    }
+    .hero::before {
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/GettyImages-297764031.jpg");
+    }
+    .hero::after {
+      opacity: 0;
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/GettyImages-135915652.jpg");
+      animation-delay: 6s;
+    }
+    @keyframes heroFade {
+      0%, 40% { opacity: 1; }
+      50%, 90% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .hero .inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .brand {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .brand i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
+    .hero-sub {
+      width: 620px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 22px;
+      line-height: 1.62;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .hero-badges span {
+      padding: 12px 16px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .hero .label { left: 50%; right: auto; margin-left: 382px; }
+    .hero .label.alt { bottom: 40px; }
+
+    .promise {
+      background: var(--ivory);
+    }
+    .promise-head {
+      display: grid;
+      grid-template-columns: 470px 1fr;
+      gap: 58px;
+      align-items: end;
+      margin-bottom: 44px;
+    }
+    .promise-copy {
+      border-left: 4px solid var(--teal);
+      padding-left: 24px;
+    }
+    .problem-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .problem {
+      overflow: hidden;
+      min-height: 310px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .card-photo {
+      position: relative;
+      height: 178px;
+      margin: -24px -24px 22px;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+      background: #d9e2de;
+    }
+    .card-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .problem b {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 19px;
+    }
+    .problem strong {
+      display: block;
+      margin-top: 0;
+      color: var(--ink);
+      font-size: 25px;
+      line-height: 1.34;
+    }
+
+    .photo-band {
+      padding: 0;
+      background: #111;
+    }
+    .wide-photo {
+      position: relative;
+      height: 560px;
+      background-position: center;
+      background-size: cover;
+    }
+    .wide-photo.bridge {
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.08)), url("assets/GettyImages-303597978.jpg");
+    }
+    .wide-photo .inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .photo-text {
+      width: 440px;
+      color: #fff;
+    }
+    .photo-text p { color: rgba(255, 255, 255, 0.84); }
+
+    .benefits {
+      background: #f7fbf9;
+    }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 38px;
+    }
+    .benefit {
+      overflow: hidden;
+      min-height: 292px;
+      padding: 22px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid rgba(15, 130, 124, 0.18);
+    }
+    .benefit .card-photo {
+      height: 164px;
+      margin: -22px -22px 18px;
+    }
+    .num {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--teal);
+      font-weight: 900;
+    }
+    .benefit p { margin-top: 10px; font-size: 15px; line-height: 1.48; }
+
+    .itinerary {
+      background: var(--ivory);
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 38px;
+    }
+    .image-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ddd;
+    }
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .image-card .caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      padding: 70px 28px 28px;
+      color: #fff;
+      background: linear-gradient(0deg, rgba(0,0,0,.72), rgba(0,0,0,0));
+    }
+    .image-card .caption p {
+      margin-top: 8px;
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .route {
+      background: #f1f6fb;
+    }
+    .route-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .route-item {
+      overflow: hidden;
+      min-height: 292px;
+      padding: 0;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid rgba(35, 106, 159, 0.16);
+    }
+    .route-photo {
+      position: relative;
+      height: 172px;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+      background: #d8e3ec;
+    }
+    .route-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .route-photo .label {
+      right: 8px;
+      bottom: 8px;
+      max-width: none;
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;
+      padding: 4px 5px;
+      font-size: 7px;
+    }
+    .day {
+      padding: 18px 18px 8px;
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .route-item p {
+      padding: 0 18px 20px;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.42;
+    }
+
+    .value {
+      background: var(--ink);
+      color: #fff;
+    }
+    .value h2 { color: #fff; }
+    .value p { color: rgba(255,255,255,.78); }
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 38px;
+    }
+    .value-box {
+      overflow: hidden;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      background: rgba(255,255,255,.07);
+    }
+    .value-visual {
+      position: relative;
+      height: 190px;
+      margin: -32px -32px 24px;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+      background: rgba(255,255,255,.12);
+    }
+    .value-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .value-box h3 { color: #fff; }
+    .value-lead {
+      margin-top: 12px;
+      color: rgba(255,255,255,.74);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .value-box ul {
+      margin: 18px 0 0;
+      padding-left: 20px;
+      color: rgba(255,255,255,.82);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+    .meal-board {
+      display: grid;
+      grid-template-columns: 410px 1fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 34px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .meal-photo {
+      position: relative;
+      min-height: 280px;
+      background: rgba(255,255,255,.12);
+    }
+    .meal-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .meal-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px 38px 34px 10px;
+    }
+    .meal-copy h3 {
+      color: #fff;
+    }
+    .meal-copy p {
+      margin-top: 0;
+      color: rgba(255,255,255,.78);
+      font-size: 18px;
+      line-height: 1.68;
+    }
+
+    .closing {
+      background: var(--paper);
+      text-align: center;
+    }
+    .cta {
+      display: inline-flex;
+      margin-top: 32px;
+      padding: 18px 28px;
+      border-radius: 6px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .note {
+      width: 780px;
+      margin: 22px auto 0;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="label">GettyImages-297764031.jpg</span>
+      <span class="label alt">GettyImages-135915652.jpg</span>
+      <div class="inner">
+        <h1>우리만 단독으로, 프라이빗하게<br>다낭 5일</h1>
+        <p class="hero-sub">쇼핑도 선택관광도 없이, 전용 차량으로 여유롭게 즐기는 우리만의 다낭·호이안 여행.</p>
+        <div class="hero-badges">
+          <span>NO 쇼핑</span>
+          <span>NO 선택관광</span>
+          <span>마사지 2회</span>
+          <span>바나힐·호이안 포함</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section promise">
+      <div class="inner">
+        <div class="promise-head">
+          <div>
+            <h2>단체 패키지의 피로함은 빼고,<br>자유여행의 여유만 더한 일정</h2>
+          </div>
+          <p class="promise-copy">불필요한 대기는 줄이고, 다낭의 진짜 매력에 집중합니다.</p>
+        </div>
+        <div class="problem-row">
+          <div class="problem">
+            <div class="card-photo">
+              <img src="assets/promise-private-vehicle.jpg" alt="전용 차량으로 여유롭게 이동하는 다낭 여행">
+              <span class="label">promise-private-vehicle.jpg</span>
+            </div>
+            <b>단체 이동의 피로</b>
+            <strong>기다림 없는 우리만의 전용 차량</strong>
+          </div>
+          <div class="problem">
+            <div class="card-photo">
+              <img src="assets/promise-hoian-freewalk.jpg" alt="쇼핑 부담 없이 자유롭게 걷는 호이안 거리">
+              <span class="label">promise-hoian-freewalk.jpg</span>
+            </div>
+            <b>쇼핑과 옵션 부담</b>
+            <strong>원치 않는 쇼핑센터 없이 오롯이 여행에 집중</strong>
+          </div>
+          <div class="problem">
+            <div class="card-photo">
+              <img src="assets/GettyImages-266703812.jpg" alt="처음 가는 다낭에서 즐기는 바구니배 체험">
+              <span class="label">GettyImages-266703812.jpg</span>
+            </div>
+            <b>처음 가는 다낭의 막막함</b>
+            <strong>입장권 예매와 필수 동선까지 한 번에</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section route">
+      <div class="inner">
+        <h2>추천 일정 한눈에 보기</h2>
+        <div class="route-list">
+          <div class="route-item">
+            <div class="route-photo">
+              <img src="assets/GettyImages-284360469.jpg" alt="1일차 다낭 도착">
+              <span class="label">GettyImages-284360469.jpg</span>
+            </div>
+            <div class="day">1일차</div>
+            <p>다낭 도착, 호텔이동 후 휴식</p>
+          </div>
+          <div class="route-item">
+            <div class="route-photo">
+              <img src="assets/GettyImages-135915652.jpg" alt="2일차 호이안 올드타운 야경">
+              <span class="label">GettyImages-135915652.jpg</span>
+            </div>
+            <div class="day">2일차</div>
+            <p>마사지, 오행산 탐방, 바구니배 체험, 호이안 야경</p>
+          </div>
+          <div class="route-item">
+            <div class="route-photo">
+              <img src="assets/GettyImages-158131948.jpg" alt="3일차 바나힐">
+              <span class="label">GettyImages-158131948.jpg</span>
+            </div>
+            <div class="day">3일차</div>
+            <p>바나힐 케이블카와 썬월드 1일 패스</p>
+          </div>
+          <div class="route-item">
+            <div class="route-photo">
+              <img src="assets/GettyImages-125264906.jpg" alt="4일차 다낭 시내 관광">
+              <span class="label">GettyImages-125264906.jpg</span>
+            </div>
+            <div class="day">4일차</div>
+            <p>마사지, 다낭 시내 관광</p>
+          </div>
+          <div class="route-item">
+            <div class="route-photo">
+              <img src="assets/GettyImages-166787594.jpg" alt="5일차 다낭 출발 비행기 이미지">
+              <span class="label">GettyImages-166787594.jpg</span>
+            </div>
+            <div class="day">5일차</div>
+            <p>다낭 출발, 인천 도착</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section itinerary">
+      <div class="inner">
+        <h2>바나힐부터 호이안까지<br>다낭 완전정복</h2>
+        <div class="split">
+          <div class="image-card">
+            <img src="assets/GettyImages-107764543.jpg" alt="호이안 올드타운">
+            <span class="label">GettyImages-107764543.jpg</span>
+            <div class="caption">
+              <h3>호이안 올드타운</h3>
+              <p>유네스코 세계문화유산과 시클로 투어</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/GettyImages-293247824.jpg" alt="오행산 동굴 안으로 들어오는 빛줄기와 불상">
+            <span class="label">GettyImages-293247824.jpg</span>
+            <div class="caption">
+              <h3>오행산</h3>
+              <p>빛이 내려앉는 신비한 동굴체험</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/GettyImages-266496096.jpg" alt="바구니배 체험">
+            <span class="label">GettyImages-266496096.jpg</span>
+            <div class="caption">
+              <h3>바구니배 체험</h3>
+              <p>코코넛 숲을 가르는 이색 체험</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/GettyImages-256699424.jpg" alt="다낭 미케비치">
+            <span class="label">GettyImages-256699424.jpg</span>
+            <div class="caption">
+              <h3>다낭 해변 휴양 도시</h3>
+              <p>미케비치뷰를 즐기며 도심 휴양</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/highlight-hoian-wish-candle.jpg" alt="호이안 소원초를 띄우는 야경">
+            <span class="label">highlight-hoian-wish-candle.jpg</span>
+            <div class="caption">
+              <h3>호이안 소원초</h3>
+              <p>소원을 빌며 강에 띄우는 종이등불</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/GettyImages-219255468.jpg" alt="다낭 대성당">
+            <span class="label">GettyImages-219255468.jpg</span>
+            <div class="caption">
+              <h3>다낭 대성당</h3>
+              <p>핑크빛 성당과 가벼운 시내 산책</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/GettyImages-125264940.jpg" alt="드래곤브릿지">
+            <span class="label">GettyImages-125264940.jpg</span>
+            <div class="caption">
+              <h3>드래곤브릿지</h3>
+              <p>다낭 한강을 밝히는 야경 랜드마크</p>
+            </div>
+          </div>
+          <div class="image-card">
+            <img src="assets/GettyImages-107764493.jpg" alt="다낭 한강 전경">
+            <span class="label">GettyImages-107764493.jpg</span>
+            <div class="caption">
+              <h3>다낭 한강 전경</h3>
+              <p>노을빛 다낭 스카이라인</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-band">
+      <div class="wide-photo bridge">
+        <span class="label">GettyImages-303597978.jpg</span>
+        <div class="inner">
+          <div class="photo-text">
+            <h2>바나힐 1일 프리패스,<br>케이블카 왕복 탑승권,<br>점심뷔페 포함</h2>
+            <p>골든브릿지와 테마파크를 하루 동안 여유롭게.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section value">
+      <div class="inner">
+        <h2>핵심은 알차게,<br>여행은 자유롭게.</h2>
+        <div class="meal-board" aria-label="포함 식사 구성">
+          <div class="meal-photo">
+            <img src="assets/GettyImages-284499005.jpg" alt="맛있어 보이는 베트남 쌀국수 이미지">
+            <span class="label">GettyImages-284499005.jpg</span>
+          </div>
+          <div class="meal-copy">
+            <p>이동과 주요 관광처럼 준비가 필요한 부분은 알차게 담고, 맛집과 저녁 시간처럼 취향이 갈리는 순간은 자유롭게 남겼습니다. 정해진 일정에 끌려가기보다, 우리만의 여행을 즐길 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benefits">
+      <div class="inner">
+        <h2>우리만 다낭 5일의 네 가지 약속</h2>
+        <div class="benefit-grid">
+          <div class="benefit">
+            <div class="card-photo">
+              <img src="assets/GettyImages-107764503.jpg" alt="전용차량으로 이동하는 다낭 도시">
+              <span class="label">GettyImages-107764503.jpg</span>
+            </div>
+            <span class="num">1</span>
+            <h3>전용 차량 &amp; 단독 가이드</h3>
+            <p>다른 일행 눈치 없이</p>
+          </div>
+          <div class="benefit">
+            <div class="card-photo">
+              <img src="assets/GettyImages-266703812.jpg" alt="쇼핑 없이 즐기는 바구니배 체험">
+              <span class="label">GettyImages-266703812.jpg</span>
+            </div>
+            <span class="num">2</span>
+            <h3>쇼핑·옵션 제로</h3>
+            <p>강요 없는 일정</p>
+          </div>
+          <div class="benefit">
+            <div class="card-photo">
+              <img src="assets/GettyImages-279468642.jpg" alt="입장권 포함 바나힐 케이블카">
+              <span class="label">GettyImages-279468642.jpg</span>
+            </div>
+            <span class="num">3</span>
+            <h3>주요 명소 입장권 포함</h3>
+            <p>바나힐·호이안·오행산 등</p>
+          </div>
+          <div class="benefit">
+            <div class="card-photo">
+              <img src="assets/GettyImages-260283569.jpg" alt="마사지와 관광 후 여유로운 휴식">
+              <span class="label">GettyImages-260283569.jpg</span>
+            </div>
+            <span class="num">4</span>
+            <h3>90분 스파 마사지 2회</h3>
+            <p>마사지 팁까지 포함</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
