@@ -84,34 +84,44 @@
     .hero {
       position: relative;
       height: 760px;
+      overflow: hidden;
       color: #fff;
       background: #0e3945;
     }
-    .hero::before,
-    .hero::after {
-      content: "";
+    .hero-slide {
       position: absolute;
       inset: 0;
       background-position: center;
       background-size: cover;
-      animation: heroFade 12s infinite;
-    }
-    .hero::before {
-      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/GettyImages-297764031.jpg");
-    }
-    .hero::after {
       opacity: 0;
-      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/GettyImages-135915652.jpg");
-      animation-delay: 6s;
+      animation: heroSlide 25s infinite;
     }
-    @keyframes heroFade {
-      0%, 40% { opacity: 1; }
-      50%, 90% { opacity: 0; }
-      100% { opacity: 1; }
+    .hero-slide--1 {
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/bg-02-hoian-day-bike-alley.png");
+    }
+    .hero-slide--2 {
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/bg-04-danang-cathedral-solo-summer.png");
+      animation-delay: 5s;
+    }
+    .hero-slide--3 {
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/bg-03-hoian-wish-candle-close.png");
+      animation-delay: 10s;
+    }
+    .hero-slide--4 {
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/GettyImages-297764031.jpg");
+      animation-delay: 15s;
+    }
+    .hero-slide--5 {
+      background-image: linear-gradient(90deg, rgba(11, 36, 41, 0.74), rgba(11, 36, 41, 0.25)), url("assets/GettyImages-135915652.jpg");
+      animation-delay: 20s;
+    }
+    @keyframes heroSlide {
+      0%, 18% { opacity: 1; }
+      22%, 100% { opacity: 0; }
     }
     .hero .inner {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -155,8 +165,7 @@
       font-size: 16px;
       font-weight: 800;
     }
-    .hero .label { left: 50%; right: auto; margin-left: 382px; }
-    .hero .label.alt { bottom: 40px; }
+    .hero-slide .label { right: 32px; bottom: 32px; left: auto; margin-left: 0; }
 
     .promise {
       background: var(--ivory);
@@ -475,8 +484,21 @@
 <body>
   <main class="page">
     <section class="hero">
-      <span class="label">GettyImages-297764031.jpg</span>
-      <span class="label alt">GettyImages-135915652.jpg</span>
+      <div class="hero-slide hero-slide--1" aria-hidden="true">
+        <span class="label">bg-02-hoian-day-bike-alley.png</span>
+      </div>
+      <div class="hero-slide hero-slide--2" aria-hidden="true">
+        <span class="label">bg-04-danang-cathedral-solo-summer.png</span>
+      </div>
+      <div class="hero-slide hero-slide--3" aria-hidden="true">
+        <span class="label">bg-03-hoian-wish-candle-close.png</span>
+      </div>
+      <div class="hero-slide hero-slide--4" aria-hidden="true">
+        <span class="label">GettyImages-297764031.jpg</span>
+      </div>
+      <div class="hero-slide hero-slide--5" aria-hidden="true">
+        <span class="label">GettyImages-135915652.jpg</span>
+      </div>
       <div class="inner">
         <h1>우리만 단독으로, 프라이빗하게<br>다낭 5일</h1>
         <p class="hero-sub">쇼핑도 선택관광도 없이, 전용 차량으로 여유롭게 즐기는 우리만의 다낭·호이안 여행.</p>
